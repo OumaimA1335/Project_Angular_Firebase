@@ -1,0 +1,76 @@
+<div id="breadcrumbs">
+    
+        <table style="margin-left:100px;">
+            <td>
+                <a routerLink="/home">Home</a>
+            </td>
+            <td>Cart</td>
+        </table>
+
+
+    
+    <!-- / container -->
+</div>
+<!-- / body -->
+
+<div id="body">
+    <div class="container">
+        <div id="content" class="full">
+            <div class="cart-table">
+                <table>
+                    <tr>
+                        <th class="items">Items</th>
+                        <th class="price">Price</th>
+                        <th class="qnt">Quantity</th>
+                        <th class="delete">Delete</th>
+                    </tr>
+
+                    <tr *ngFor="let prod of dataArray ;">
+
+                        <td class="items">
+
+                            <div class="image">
+                                <img  [src]="prod.imgArt" alt="" height="220px" weight="200px">
+                            </div>
+                            <h3>{{prod.nameArt}}</h3>
+
+                        </td>
+                        <td class="price">
+
+                            <p>{{prod.prixArt}}</p>
+                        </td>
+                        <td class="qnt">
+                            <input type="number" style="width: 110px;" value="" (change)="selectChangeHandler($event,prod)"> 
+
+                        </td>
+                        <td class="delete">
+                            <button style="background-color: transparent; border: 0px;" (click)="delete(prod.id , prod)">
+                                <i class="bi bi-trash-fill" style="font-size: x-large; color: black; "> </i>
+                            </button>
+                         
+                        </td>
+                    </tr>
+
+                </table>
+                <table align="right" width="300px">
+                    <tr>
+                        <td>
+                            Total
+                        </td>
+                        <td>
+                           {{total}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button  (click)="affichetotal(total,quantite)" type="button">Place Order</button>
+                        </td>                    
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- / content -->
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->

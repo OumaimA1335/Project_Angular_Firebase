@@ -1,0 +1,40 @@
+<div id="breadcrumbs">
+    <div class="container">
+      <table>
+        <tr>
+          <td><a routerLink="/dashbord-admin">Admin panel</a></td>
+          <td>Article list</td>
+        </tr>
+      
+      </table>
+    </div>
+    <!-- / container -->
+    
+</div>
+
+
+<div class="table100 ver3 m-b-110">
+    <table class="cart-table" style="margin-top: 30px;margin-left: 150px;">
+        <thead>
+            <tr >
+                <th >Id</th>
+                <th >name</th>
+                <th>price</th>
+                <th >image</th>
+                <th >Quantité</th>
+                <th >category</th>
+                <th >Update</th>
+                <th >Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of dataArray">
+            <tr >
+                <td >{{item.id}}</td>
+                <td >{{item.nameArt}}</td>
+                <td>{{item.prixArt}}</td>
+                <td ><img [src]="item.imgArt" width="150px"height="150px"></td>
+                <td >{{item.qtArt}}</td>
+                <td >{{item.catArt}}</td>
+                <td><button class="custom-btn btn-6" (click)="updateProduct(item)"><span>Update</span></button></td>
+                <td><button class="custom-btn btn-6" (click)="delete(item.id)"><span>Delete</span></button></td>
+            </tr>

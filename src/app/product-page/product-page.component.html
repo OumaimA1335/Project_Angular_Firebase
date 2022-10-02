@@ -1,0 +1,77 @@
+<div id="breadcrumbs">
+    <div class="container">
+        <table>
+            <tr>
+                <td><a routerLink="/home">Home</a></td>
+                <td>Product page</td>
+            </tr>
+
+        </table>
+    </div>
+    <!-- / container -->
+
+</div>
+
+<div id="body">
+    <div class="container">
+        <div id="content" class="full">
+            <div class="product">
+                <div class="image">
+                    <img [src]="product.imgArt" alt="">
+                </div>
+                <div class="details">
+                   
+                    <div class="actions">
+                        <table >
+                            <th colspan="2">
+                                Product details
+                            </th>
+                            <tr>
+                                <td colspan="2">
+                                    <p style="text-align: left; padding-top: 20px;	font-family:  'Lato', sans-serif;">
+                                         Name : {{product.nameArt}}  </p>
+                                </td>
+                               
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <p style="text-align: left; padding-top: 20px; 	font-family:  'Lato', sans-serif;"> 
+                                        Price: {{product.prixArt}}  </p>
+                                </td>
+                
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: left;padding-top: 20px;font-family:  'Lato', sans-serif;">
+                                 Quantity :   <input type="number" style="width: 110px;" value="" (change)="selectChangeHandler($event)">
+                                </td>
+                            </tr>
+                            <tr> 
+                                <td style="text-align: left;padding-top: 20px;font-family:  'Lato', sans-serif;">
+                                    <a    class="btn-grey" (click)="addProduit(product)" >Add to cart</a>
+                                </td>
+                                <td style="text-align: left;padding-top: 20px;font-family:  'Lato', sans-serif;">
+                                    <a (click)="affichetotal(prix,quantite)" class="btn-grey1">Buy right now</a>
+                                </td>
+                            
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: left;font-size: large;">
+                                    <a (click)="addfavorite(product)" style="text-decoration: none; color: #000;">
+                                         <i class="far fa-grin-hearts" style="color: rgb(0, 0, 0);"></i> 
+                                         Add to whish List
+                                </a>
+                                    </td>
+                            </tr>
+                        </table>
+                       
+                       
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / content -->
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->

@@ -1,0 +1,45 @@
+<div id="breadcrumbs">
+    <div class="container">
+      <table>
+        <tr>
+          <td><a routerLink="/home">Home</a></td>
+          <td>Bill's historique</td>
+        </tr>
+      
+      </table>
+    </div>
+    <!-- / container -->
+    
+</div>
+
+
+<div class="table100 ver3 m-b-110">
+    <table class="cart-table" style="margin-top: 30px;margin-left:380px;">
+        <thead>
+            <tr >
+                <th >Id</th>
+                <th >name</th>
+                <th>price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>paiement</th>
+               
+            </tr>
+        </thead>
+          <tbody *ngFor="let item of dataArray">
+            <tr >
+                <td >{{item.id}}</td>
+                <td >  <p *ngFor="let member of objectValues(item.articles)">{{member.nameArt}}</p> </td>
+                <td> <p *ngFor="let member of objectValues(item.articles)">{{member.prixArt}}</p></td>
+                <td >{{item.quantite}} </td>
+                <td >{{item.total}} </td>
+                <td >{{item.pay}} </td>
+               
+            <!---    <td><button class="custom-btn btn-6" (click)="addbill(item)"><span>Done</span></button></td>
+             <td><button class="custom-btn btn-6" (click)="delete(item.id)"><span>Delete</span></button></td>-->
+            </tr>
+          </tbody>
+    </table>
+    </div>
+    
+

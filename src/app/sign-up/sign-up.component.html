@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Register</h2>
+                        <form method="POST" #f="ngForm" (ngSubmit)="register(f)" >
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user-alt"></i></label>
+                                <input type="text" name="flName" #flName="ngModel" ngModel required placeholder="Your Name"/>
+                                <p class="alert alert-danger" *ngIf="flName.errors?.required && flName.touched">this input firstName and lastName are required</p>           
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i></label>
+                                <input type="email"  placeholder="Your Email" name="email" #email="ngModel" ngModel email required/>
+                                <p class="alert alert-danger" *ngIf="email.errors?.required && email.touched">this input email is required</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="text"><i class="bi bi-telephone-fill"></i></label>
+                                <input type="text"  placeholder="Your phone number" name="phone" #phone="ngModel" ngModel phone required/>
+                                <p class="alert alert-danger" *ngIf="phone.errors?.required && phone.touched">this input phone is required</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="text"><i class="fas fa-map-marker-alt"></i></label>
+                                <input type="text"  placeholder="Your town" name="town" #town="ngModel" ngModel town required/>
+                                <p class="alert alert-danger" *ngIf="town.errors?.required && town.touched">this input town is required</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="fas fa-lock"></i></label>
+                                <input type="password"  placeholder="Password"  name="password" #password="ngModel" ngModel required />
+                               <p class="alert alert-danger" *ngIf="password.errors?.required && password.touched">this input password is required</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="fas fa-lock"></i></label>
+                                <input type="password"  placeholder="Repeat your password"  name="confirmPassword" #confirmPassword="ngModel" ngModel required />
+                                <p class="alert alert-danger" *ngIf="confirmPassword.errors?.required  && confirmPassword.touched">this input confirmpassword is required</p>
+                                <p class="alert alert-danger" *ngIf="password.value!==confirmPassword.value && password.touched">not equal</p>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit"  class="form-submit" [disabled]="f.invalid" value="Register" style="background-color: black;"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="https://previews.123rf.com/images/mtoome/mtoome1504/mtoome150400048/38911541-jeune-femme-avec-des-accessoires-de-luxe-sur-fond-blanc.jpg" width="800px" alt="sing up image"></figure>
+                     
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

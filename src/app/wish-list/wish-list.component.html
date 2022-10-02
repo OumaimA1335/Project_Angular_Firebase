@@ -1,0 +1,55 @@
+<div id="breadcrumbs">
+    <div class="container">
+        <table>
+            <td>
+                <a href="#">Home</a>
+            </td>
+            <td>WishList</td>
+        </table>
+            
+        
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->
+
+<div id="body">
+    <div class="container">
+        <div id="content" class="full">
+            <div class="cart-table">
+                <table>
+                    <tr>
+                        <th class="items">Items</th>
+                        <th class="price">Price</th>
+                        <th class="delete">Delete</th>
+                    </tr>
+                    <tr *ngFor="let prod of dataArray">
+                        <td class="items">
+                            <div class="image">
+                                <img [src]="prod.imgArt" alt="" height="220px" weight="200px">
+                            </div>
+                            <h3>{{prod.nameArt}}</h3>
+
+                        </td>
+                        <td class="price" >
+                            <p  >{{prod.prixArt}}</p>
+                        </td>
+
+                        <td class="delete">
+                            <button style="background-color: transparent;border: 0px;" (click)="delete(prod.id)">
+                                <i class="bi bi-trash-fill" style="font-size: x-large; "> </i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+         
+
+        </div>
+        <!-- / content -->
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->

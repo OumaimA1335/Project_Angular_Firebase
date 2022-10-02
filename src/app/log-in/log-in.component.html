@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="https://previews.123rf.com/images/mtoome/mtoome1504/mtoome150400048/38911541-jeune-femme-avec-des-accessoires-de-luxe-sur-fond-blanc.jpg" alt="sing up image"></figure>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Log in</h2>
+                        <form method="POST" class="register-form" id="login-form" #f="ngForm" (ngSubmit)="login(f)">
+                            <div class="form-group">
+                                <label for="your_name"><i class="fas fa-user-alt"></i></label>
+                                <input type="email" placeholder="Your Name"#email="ngModel" ngModel name="email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="fas fa-lock"></i></label>
+                                <input type="password"  placeholder="Password"#password="ngModel" ngModel name="password"/>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" style="background-color: black;"/>
+                            </div>
+                            <div class="alert alert-danger" *ngIf="messageError">{{messageError}}</div>
+                        </form>
+                        <!--<div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="fab fa-facebook-f" style="color: blue;"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" style="color: cyan;"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"style="color:orange;"></i></a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

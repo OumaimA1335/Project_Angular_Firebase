@@ -1,0 +1,78 @@
+<div id="breadcrumbs">
+    <div class="container">
+      <table>
+        <tr>
+          <td><a routerLink="/dashbord-admin">Admin panel</a></td>
+          <td>Add Article</td>
+        </tr>
+      
+      </table>
+    </div>
+    <!-- / container -->
+    
+  </div>
+
+<div class="col-lg-8 col-xlg-9 col-md-12" style="margin-left: 150px;margin-top: 20px;">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-horizontal form-material" id="add-form" #f="ngForm" (ngSubmit)="addproduct(f)"  >
+                <div class="form-group mb-4">
+                    <label class="col-md-12 p-0">Article id</label>
+                    <div class="col-md-12 border-bottom p-0">
+                        <input type="text"  name="idd" #idd="ngModel" ngModel class="form-control p-0 border-0"> </div>
+                        <p class="alert alert-danger" *ngIf="idd.errors?.required && idd.touched">this input id  is required</p> 
+                </div>
+                <div class="form-group mb-4">
+                    <label for="example-email" class="col-md-12 p-0">Name</label>
+                    <div class="col-md-12 border-bottom p-0">
+                        <input type="text"  class="form-control p-0 border-0"  name="nameArt" #nameArt="ngModel" ngModel
+                           >
+                           <p class="alert alert-danger" *ngIf="nameArt.errors?.required && nameArt.touched">this input NameArt is required</p> 
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label class="col-md-12 p-0">prix</label>
+                    <div class="col-md-12 border-bottom p-0">
+                        <input type="text" name="prixArt" #prixArt="ngModel" ngModel class="form-control p-0 border-0">
+                        <p class="alert alert-danger" *ngIf="prixArt.errors?.required && prixArt.touched">this input prixArt  is required</p> 
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label class="col-md-12 p-0">image</label>
+                    <div class="col-md-12 border-bottom p-0">
+                        <input type="text" name="imgArt" #imgArt="ngModel" ngModel  class="form-control p-0 border-0">
+                        <p class="alert alert-danger" *ngIf="imgArt.errors?.required && imgArt.touched">this input imgArt  is required</p> 
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label class="col-md-12 p-0">Quantité</label>
+                    <div class="col-md-12 border-bottom p-0">
+                        <input type="text" name="qtArt" #qtArt="ngModel" ngModel  class="form-control p-0 border-0">
+                        <p class="alert alert-danger" *ngIf="qtArt.errors?.required && qtArt.touched">this input qtArt  is required</p> 
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label class="col-md-12 p-0">Select category</label> 
+
+                    <div class="col-sm-12 border-bottom">
+                        <select class="form-select shadow-none p-0 border-0 form-control-line" name="catArt" #catArt="ngModel" ngModel>
+                            <option value="Rings">Rings</option>
+                            <option value="earrings">Earrings</option>
+                            <option value="Bracelets">Bracelets</option>
+                            <option value="Necklaces">Necklaces</option>
+                        
+                        </select>
+                        <p class="alert alert-danger" *ngIf="catArt.errors?.required && catArt.touched">this input catArt  is required</p> 
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+                    <br>
+                    <div class="col-sm-12">
+                        <button class="btn btn-success" style="background-color:  #6d7fcc;">Add article</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

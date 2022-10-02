@@ -1,0 +1,44 @@
+#breadcrumbs {
+	background:  #6d7fcc;;
+	color: #ffffff;
+	font-size: 15px;
+	overflow: hidden;
+	padding: 12px 0;
+	font-family: 'Lato', sans-serif;
+}
+
+#breadcrumbs li {
+	float: left;
+}
+
+#breadcrumbs a {
+	color: #ffffff;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+}
+
+#breadcrumbs td + td:before {
+	content: "";
+	margin: 13px 13px 0 15px;
+	float: left;
+	background: url(/assets/ico_arrow.png) no-repeat;
+	width: 9px;
+	height: 5px;
+}
+#body
+{
+	text-align: center;
+	right: 100px;
+}
+.container {
+	position: relative;
+	width: 1170px;
+	margin: 0 auto;
+	text-align: center;
+}
+.c1 {
+	position: relative;
+	width: 1000px;
+	margin: 100px 300px;
+	text-align: center;
+}

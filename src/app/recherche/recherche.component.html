@@ -1,0 +1,44 @@
+<div id="breadcrumbs">
+    <div class="container">
+      <table>
+        <tr>
+          <td><a href="#">Home</a></td>
+          <td>Search by price</td>
+        </tr>
+      
+      </table>
+    </div>
+ </div>
+    <!-- / container -->
+    <div id="body">
+        <div class="container">
+            <div id="content" class="full">
+                <div class="cart-table">
+                    <table>
+                        <tr>
+                            <th class="items">Items</th>
+                            <th class="price">Price</th>
+                           
+                        </tr>
+                        <tr *ngFor="let prod of TabPromo">
+                            <td class="items">
+                                <div class="image">
+                                    <img (click)="afficheProduct(prod)"[src]="prod.imgArt" alt="" height="220px" weight="200px">
+                                </div>
+                                <h3>{{prod.nameArt}}</h3>
+    
+                            </td>
+                            <td class="price" >
+                                <p  >{{prod.prixArt}}</p>
+                            </td>
+                           
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- / content -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / body -->
+    

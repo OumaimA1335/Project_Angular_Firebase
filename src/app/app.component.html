@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<head>
+  <meta charset="utf-8">
+  <title>jewelry</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+
+<body>
+
+  <header id="header" *ngIf="!isAdmin">
+    <div class="container">
+      <a href="#" id="logo" title="Diana’s jewelry">Diana’s jewelry</a>
+      <div class="right-links">
+        <table>
+          <tr>
+            <td style="text-align: center;">
+              <div class="search-container">
+                <input type="text" name="search" id="search" (change)="onChange()" placeholder="Search by price"
+                  class="search-input">
+                <a href="#" class="search-btn">
+                  <i class="bi bi-search" style="font-size: x-large; "></i>
+                </a>
+              </div>
+
+            </td>
+            <td style="text-align: center;"><a routerLink="/wish-list"> <i class="bi bi-suit-heart-fill"
+                  style="font-size: x-large;margin-right: 25px;margin-left: 0px "></i></a></td>
+            <td style="text-align: center;"><a routerLink="/panier"> <i class="bi bi-cart4"
+                  style="font-size:x-large;;margin-right: 25px; "></i></a></td>
+            <td style="height: 40px;text-align: center;">
+              <div class="dropdown">
+                <a class="dropbtn" style="margin-top: 10px;"> <i class="fas fa-user"
+                    style="font-size: x-large;color: #000;margin-top: 5px;;margin-left: 10px;"></i> <i
+                    class="bi bi-caret-down-fill"></i></a>
+                <div class="dropdown-content">
+                  <a routerLink="/log-in" *ngIf="!isUser"> Log in</a>
+                  <a (click)="navi()" *ngIf="isUser"> Profile</a>
+                  <a routerLink="/bill-client" *ngIf="isUser"> Bil historique</a>
+                  <a (click)="logout()" *ngIf="isUser"> Log out</a>
+                  <a routerLink="/sign-up" *ngIf="!isUser"> Register</a>
+                </div>
+              </div>
+
+            </td>
+
+
+          </tr>
+
+        </table>
+      </div>
+    </div>
+    <!-- / container -->
+  </header>
+  <!-- / header -->
+  <div *ngIf="!isAdmin" >
+    <nav id="menu">
+      <div class="container">
+
+        <ul>
+          <li> <a routerLink="/home"> Home</a></li>
+          <li> <a routerLink="/article"> Shop</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn"> Catalog <i class="bi bi-caret-down-fill"></i></button>
+              <div class="dropdown-content" >
+                <a routerLink="/earrings" > Earrings</a>
+                <a routerLink="/rings"> Rings</a>
+                <a routerLink="/bracelets"> Bracelets</a>
+                <a routerLink="/necklaces"> Necklaces</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- / container -->
+
+    </nav>
+    <!-- / navigation -->
+  </div>
+  <router-outlet> </router-outlet>
+  <div style=" background-color:#ffffff ;width: 1515px;height:18px;"></div>
+  <div style=" background-color:#dda9a2 ;width: 1515px;height:70px;"*ngIf="!isAdmin"></div>
+</body>
+
+
+
+<!-- Footer -->
+<footer class="bg-light bg-opacity-75 text-center text-dark"*ngIf="!isAdmin">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-dark btn-floating m-1" href="https://fr-fr.facebook.com/" role="button">
+       <i class="fab fa-facebook"style="font-size:x-large"></i>
+      </a>
+      <!-- Instagram -->
+      <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/?hl=fr" role="button">
+        <i class="fab fa-instagram" style="font-size:x-large"></i> </a>
+
+     
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example21" class="form-control" placeholder="Adress email"/>
+              
+
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button class="custom-btn btn-6"><span>subscribe</span></button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+</html>

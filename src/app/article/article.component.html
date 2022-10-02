@@ -1,0 +1,31 @@
+<div id="breadcrumbs">
+  <div class="container">
+    <table>
+      <tr>
+        <td><a href="#">Home</a></td>
+        <td>Product results</td>
+      </tr>
+    
+    </table>
+  </div>
+  <!-- / container -->
+  
+</div>
+
+    <div id="body">
+        <div class="c1">
+<div id="content">
+  <section class="products">
+    <article *ngFor ="let produit of  dataArray">
+      <a (click)="afficheProduct(produit)"><img [src]="produit.imgArt" alt="jjk" height="220px" weight="200px"/></a>
+      <h3><a >{{produit.nameArt}}</a></h3>
+      <h4><a > {{produit.prixArt}}</a></h4>
+     
+      <a class="btn-add" (click)="addProduit(produit)">Add to cart</a>
+    </article>
+  </section>
+</div>
+  </div>
+   </div>
+<!-- / content -->
+
